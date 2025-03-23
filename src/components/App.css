@@ -1,0 +1,486 @@
+.header {
+  background-color: #1f2937;
+  /* Dark gray for a modern look */
+  color: #ffffff;
+  /* White text for contrast */
+  text-align: center;
+  /* padding: 20px; */
+  border-radius: 8px;
+  /* Smooth rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow for depth */
+  margin: 20px auto;
+  max-width: 600px;
+  /* Limit the width for centered layout */
+}
+
+.header-title {
+  font-size: 2rem;
+  /* Large title font size */
+  font-weight: bold;
+  margin: 0;
+  /* Remove margin for clean spacing */
+}
+
+.header-subtitle {
+  font-size: 1.2rem;
+  /* Slightly smaller for subtitle */
+  font-style: italic;
+  /* Add emphasis with italic */
+  margin: 0;
+  /* Adjust spacing */
+}
+
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  /* Center the loader vertically */
+  background-color: #f3f4f6;
+  /* Light gray background for a clean look */
+  color: #1f2937;
+  /* Dark gray text for readability */
+}
+
+.loader-text {
+  font-size: 1.5rem;
+  /* Slightly larger text */
+  margin-bottom: 20px;
+  /* Add space between text and spinner */
+  font-weight: bold;
+}
+
+.loader-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #e5e7eb;
+  /* Light border for the spinner background */
+  border-top: 4px solid #1f2937;
+  /* Darker border for the spinning effect */
+  border-radius: 50%;
+  /* Make it circular */
+  animation: spin 1s linear infinite;
+  /* Smooth rotation */
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.start-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  /* Center the content vertically */
+  background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+  /* Gradient for a modern look */
+  color: #ffffff;
+  /* White text for contrast */
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+  /* Include padding in height/width calculations */
+}
+
+.start-title {
+  font-size: 2.5rem;
+  /* Large font size for the main title */
+  font-weight: bold;
+  margin-bottom: 10px;
+  /* Space between title and subtitle */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  /* Subtle shadow for depth */
+}
+
+.start-subtitle {
+  font-size: 1.5rem;
+  /* Slightly smaller for subtitle */
+  font-weight: normal;
+  margin: 0;
+  /* Clean spacing */
+  font-style: italic;
+  /* Italics for a welcoming tone */
+  margin-bottom: 20px;
+  /* Space between subtitle and button */
+}
+
+.start-button {
+  font-size: 1.2rem;
+  /* Button text size */
+  font-weight: bold;
+  color: #1e3a8a;
+  /* Button text color */
+  background-color: #ffffff;
+  /* Button background color */
+  border: none;
+  padding: 10px 20px;
+  /* Button padding for a clickable size */
+  border-radius: 25px;
+  /* Rounded button for a modern look */
+  cursor: pointer;
+  box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+  /* Subtle shadow for depth */
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  /* Smooth hover effects */
+}
+
+.question-container {
+  display: flex;
+  flex-direction: column;
+  /* Arrange elements vertically */
+  align-items: center;
+  /* Center align all items */
+  justify-content: center;
+  /* Center the content */
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 600px;
+  /* Limit width for readability */
+  background-color: #f9fafb;
+  /* Light background for a clean look */
+  border-radius: 10px;
+  /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow for depth */
+}
+
+.question-text {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  /* Add space below the question text */
+  color: #1f2937;
+  /* Dark gray text */
+  text-align: center;
+}
+
+.options-container {
+  display: flex;
+  flex-direction: column;
+  /* Arrange options vertically */
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.option-button {
+  padding: 12px 18px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  background-color: #f9f9f9;
+  color: #333;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.3s ease-in-out;
+  width: 400px;
+}
+
+.option-button:hover:not(:disabled) {
+  background-color: #f0f8ff;
+  border-color: #007bff;
+}
+
+.option-button:disabled {
+  cursor: not-allowed;
+  background-color: #f2f2f2;
+  color: #999;
+  border-color: #ddd;
+}
+
+/* Styling for the correct answer */
+.option-button.Correct {
+  background-color: #3acd5f;
+  color: white;
+  /* border-color: #00dc2c; */
+  animation: pulse 1.2s infinite;
+}
+
+/* Styling for the wrong answer
+.option-button.Wrong {
+  background-color: #c26d76;
+  color: white;
+  border-color: #dc3545;
+} */
+
+/* Keyframes for a subtle pulse effect for the correct answer */
+@keyframes pulse {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+
+/* Progress Component Styling */
+.progress-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f5f5f5;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 16px 24px;
+  max-width: 600px;
+  margin: 20px auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+.progress-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.progress-info p {
+  margin: 4px 0;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.progress-info p span {
+  font-weight: bold;
+  color: #007bff;
+}
+
+.progress-circle-container {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.progress-circle {
+  stroke: #007bff;
+  stroke-width: 10;
+  fill: none;
+  stroke-linecap: round;
+  transform: rotate(-90deg);
+  transform-origin: center;
+  transition: stroke-dasharray 0.4s ease;
+}
+
+.progress-circle-bg {
+  stroke: #e6e6e6;
+  stroke-width: 10;
+  fill: none;
+}
+
+.progress-percentage {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+/* App.css */
+
+.quiz-result-container {
+  text-align: center;
+  margin: 2rem auto;
+  padding: 2rem;
+  max-width: 600px;
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+.quiz-result-heading {
+  font-size: 2rem;
+  color: #343a40;
+  margin-bottom: 1rem;
+}
+
+.quiz-result-message {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.quiz-result-message.pass {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+}
+
+.quiz-result-message.fail {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 1px solid #f5c6cb;
+}
+
+.quiz-result-score {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #495057;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+  .quiz-result-container {
+    padding: 1rem;
+  }
+
+  .quiz-result-heading {
+    font-size: 1.8rem;
+  }
+
+  .quiz-result-message {
+    font-size: 1.3rem;
+  }
+
+  .quiz-result-score {
+    font-size: 1rem;
+  }
+
+  button {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}
+
+/* Footer Styles */
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #ffffff;
+  border-top: 1px solid #e0e0e0;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+/* Timer Box Styles */
+.timer-box {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.timer-box span {
+  font-size: 1.2rem;
+}
+
+/* Next Button Styles */
+.next-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.next-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.next-button:active {
+  transform: translateY(0);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  footer {
+    padding: 10px 20px;
+  }
+
+  .timer-box {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+
+  .next-button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+.timer {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  background: #e74c3c;
+  padding: 10px 20px;
+  border-radius: 8px;
+  display: inline-block;
+  text-align: center;
+  /* min-width: 100px; */
+  transition: background 0.3s ease, transform 0.2s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.timer.warning {
+  background: #f39c12;
+}
+
+.timer.safe {
+  background: #2ecc71;
+}
+
+.timer.expired {
+  background: #34495e;
+}
+
+.timer.pulse {
+  animation: pulse 1s infinite;
+}
